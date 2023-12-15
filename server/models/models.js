@@ -86,4 +86,4 @@ export default {
     Rating,
     TypeBrand,
     DeviceInfo
-}
+};

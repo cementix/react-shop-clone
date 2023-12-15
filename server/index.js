@@ -3,6 +3,7 @@ import db from './db.js';
 import models from './models/models.js';
 import cors from 'cors';
 import { config } from 'dotenv';
+import router from './routes/index.js';
 config();
 
 const PORT = process.env.PORT
@@ -10,10 +11,7 @@ const PORT = process.env.PORT
 const app = express();
 app.use(cors());
 app.use(express.json());
-
-app.get('/', (req, res) => {
-    res.status(200).json({message: 'WORKS!'});
-});
+app.use('/api', router)
 
 const start = async () => {
     try {
